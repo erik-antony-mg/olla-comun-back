@@ -5,13 +5,14 @@ services:
     build: .
     restart: always
     ports:
-      - "9595:9595"
+      - "9095:9095"
     depends_on:
       - mysql
-    networks:
-      - red_ollacomun
-    volumes:
-      - ollacomun-data:/var/lib/mysql
+#    networks:
+#      - red_ollacomun
+#    volumes:
+#      - ollacomun-data:/var/lib/mysql
+
   mysql:
     container_name: "database_mysql"
     image: mysql
@@ -21,12 +22,12 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "root"
       MYSQL_DATABASE: "mamitas_db"
-    networks:
-      - red_ollacomun
-    volumes:
-      - ollacomun-data:/var/lib/mysql
+#    networks:
+#      - red_ollacomun
+#    volumes:
+#      - ollacomun-data:/var/lib/mysql
 
-networks:
-  red_ollacomun:
-volumes:
-  ollacomun-data:
+#networks:
+#  red_ollacomun:
+#volumes:
+#  ollacomun-data:
