@@ -10,7 +10,8 @@ services:
       - mysql
     networks:
       - red_ollacomun
-
+    volumes:
+      - ollacomun-data:/var/lib/mysql
   mysql:
     container_name: "database_mysql"
     image: mysql
@@ -22,6 +23,8 @@ services:
       MYSQL_DATABASE: "mamitas_db"
     networks:
       - red_ollacomun
+    volumes:
+      - ollacomun-data:/var/lib/mysql
 
 networks:
   red_ollacomun:
